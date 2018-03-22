@@ -232,6 +232,7 @@ Media.prototype.setRate = function() {
  */
 Media.prototype.release = function() {
     try {
+        this.node.src = '';
         delete this.node;
     } catch (err) {
         Media.onStatus(this.id, Media.MEDIA_ERROR, err);
